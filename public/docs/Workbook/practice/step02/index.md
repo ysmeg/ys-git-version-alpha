@@ -3,12 +3,12 @@
 以下のことを行ってください。
 
 ### step. 01
-feature/check-type をチェックアウトしているか確認してください。  
+feature/create-todo-app をチェックアウトしているか確認してください。  
 チェックアウトしていなければ、ブランチを切り替えてください。
 
 ### step. 02
 Todoアプリを作成します。  
-[sample/TodoApp-01](/src/sample/TodoApp-01/App.tsx) の内容を [src/App.tsx](/src/App.tsx) に貼り付けてください。
+[sample/TodoApp-01/App.tsx](/src/sample/TodoApp-01/App.tsx) の内容を [src/App.tsx](/src/App.tsx) に貼り付けてください。
 
 ### step. 03
 変更したファイルが作業ディレクトリにあることを確認してください。
@@ -30,11 +30,11 @@ Todoアプリを作成します。
 
 ## Previous Practice
 
-← [ブランチ作成・ブランチ切り替え](../step01/index.md)
+← [ブランチ作成・ブランチ切り替え](/public/docs/Workbook/practice/step01/index.md)
 
 ## Next Practice
 
-[Github でプルリクエストの作成・マージ](../step03/index.md) →
+[Github でプルリクエストの作成・マージ](/public/docs/Workbook/practice/step03/index.md) →
 
 ## answer
 
