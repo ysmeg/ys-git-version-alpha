@@ -1,85 +1,95 @@
-# ブランチを作成
+## ブランチ作成・ブランチ切り替え
 
 各Stepごとに答えを記載します。
 
-## `mainブランチ`をチェックアウトしていることを確認しましょう
+### step. 01
 
-今どこのブランチにいるかは、以下のコマンドをターミナルに入力することで確認できます。
+答え
 
 ```
 % git branch
 ```
 
-以下の内容が表示されていれば、成功です。
+実行結果
 
 ```
 * main
 ```
-<br>
 
-## `developブランチ`をチェックアウトしましょう
 
-`mainブランチ`から`developブランチ`に切り替えるには、以下のコマンドを実行します。
+### step. 02
+
+答え
 
 ```
 % git checkout develop
 ```
 
-以下の内容が表示されていれば、成功です。
+実行結果
 
 ```
 branch 'develop' set up to track 'origin/develop'.
 Switched to a new branch 'develop'
 ```
-<br>
 
-## `developブランチ`から `feature/add-list-item` を作成してください。この時作成したブランチにはチェックアウトしないでください。
+### step. 03
 
-新しいブランチを作成するだけの場合、以下のコマンドを実行してください。
+答え
 
 ```
 % git branch feature/add-list-item
 ```
 
 こちらは実行しても何もログは表示されません。  
-そのため以下で再度ブランチが作成されているか確認します。
 
-<br>
+### step. 04
 
-## `feature/add-list-item` が作成できたことを確認してください。
-
-ブランチを確認するには、以下のコマンドを実行します。
+答え
 
 ```
 % git branch
 ```
 
-以下の内容が表示されていれば、成功です。
+実行結果
 
 ```
 * develop
-  feature/add-list-item
+  feature/create-components
   main
 ```
 
-<br>
 
-## `developブランチ` から `feature/check-type` を作成して同時にチェックアウトしてください。
+### step. 05
 
-新しくブランチを作成しつつ、ブランチの切り替えを行うには、以下のコマンドを実行してください。
-
-```
-% git checkout -b feature/check-type
-```
-
-以下の内容が表示されていれば、成功です。
+答え
 
 ```
-Switched to a new branch 'feature/check-type'
+% git checkout -b feature/create-todo-app
 ```
 
-<br>
+実行結果
+
+```
+Switched to a new branch 'feature/create-todo-app'
+```
+
+### step. 06
+
+答え
+
+```
+% git branch
+```
+
+実行結果
+
+```
+  develop
+  feature/create-components
+* feature/create-todo-app
+  main
+```
 
 ## Practice
 
-[step01の練習問題](../../practice/step01/index.md) へ戻る
+[練習問題](/public/docs/Workbook/practice/step01/index.md) へ戻る

@@ -23,7 +23,7 @@ feature/create-todo-app が作成でき、チェックアウトしているこ�
 
 ## Next Workbook
 
-[コミット・プッシュ](../step02/index.md) →
+[コミット・プッシュ](/public/docs/Workbook/practice/step02/index.md) →
 
 ## answer
 
