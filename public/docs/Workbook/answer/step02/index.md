@@ -151,12 +151,12 @@ Writing objects: 100% (4/4), 1.62 KiB | 1.62 MiB/s, done.
 Total 4 (delta 2), reused 0 (delta 0), pack-reused 0
 remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
 remote: This repository moved. Please use the new location:
-remote:   git@github.com:ys-nkjm/ys-git-training-test.git
+remote:   git@github.com:ys-nkjm/ys-git-version-alpha.git
 remote: 
 remote: Create a pull request for 'feature/create-todo-app' on GitHub by visiting:
-remote:      https://github.com/ys-nkjm/ys-git-training-test/pull/new/feature/create-todo-app
+remote:      https://github.com/ys-nkjm/ys-git-version-alpha/pull/new/feature/create-todo-app
 remote: 
-To github.com:ys-nkjm/ys-git-training-fizz-buzz.git
+To github.com:ys-nkjm/ys-git-version-alpha
  * [new branch]      HEAD -> feature/create-todo-app
 ```
 
