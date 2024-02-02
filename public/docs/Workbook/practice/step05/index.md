@@ -36,7 +36,8 @@ Todoアプリを更新します。
 2. Open 状態でプルリクエストを作成してください。
 
 #### Fork したリポジトリは、プルリクエストを作成する際に、リポジトリも選択します。
-自身のリポジトリを選択してください。
+自身のリポジトリを選択してください。  
+万が一間違えても、問題はありません。落ち着いてやり直してみましょう。
 
 ![リポジトリを変更](/public/images/workbook/step03/practice/image-01.png)
 
@@ -59,7 +60,6 @@ develop ブランチを最新の状態にしてください。
 
 ## Next Practice
 
-<!-- TODO: 作成したらURLを追加する -->
 [コンフリクトの解消](/public/docs/Workbook/practice/step06/) →
 
 ## answer
