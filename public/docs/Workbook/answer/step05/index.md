@@ -152,12 +152,12 @@ Writing objects: 100% (9/9), 2.74 KiB | 2.74 MiB/s, done.
 Total 9 (delta 2), reused 2 (delta 0), pack-reused 0
 remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
 remote: This repository moved. Please use the new location:
-remote:   git@github.com:ys-nkjm/ys-git-training-test.git
+remote:   git@github.com:ys-nkjm/ys-git-version-alpha.git
 remote: 
 remote: Create a pull request for 'feature/create-components' on GitHub by visiting:
-remote:      https://github.com/ys-nkjm/ys-git-training-test/pull/new/feature/create-components
+remote:      https://github.com/ys-nkjm/ys-git-version-alpha/pull/new/feature/create-components
 remote: 
-To github.com:ys-nkjm/ys-git-training-fizz-buzz.git
+To github.com:ys-nkjm/ys-git-version-alpha.git
  * [new branch]      feature/create-components -> feature/create-components
 ```
 
@@ -191,7 +191,80 @@ To github.com:ys-nkjm/ys-git-training-fizz-buzz.git
 
 ### step. 12
 
+#### develop ブランチに切り替えてください。
 
+答え
+
+```
+% git checkout develop
+```
+
+実行結果
+
+```
+Switched to branch 'develop'
+Your branch is up to date with 'origin/develop'.
+```
+
+#### ローカルリポジトリの履歴を最新にする
+
+答え
+
+```
+% git fetch --prune
+```
+
+実行結果  
+※ 表示される内容が多少異なることがございます。
+
+```
+From github.com:ys-nkjm/ys-git-version-alpha
+ - [deleted]         (none)     -> origin/feature/create-components
+remote: Enumerating objects: 1, done.
+remote: Counting objects: 100% (1/1), done.
+remote: Total 1 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (1/1), 952 bytes | 476.00 KiB/s, done.
+   cd2a982..1b7609c  develop    -> origin/develop
+```
+
+#### ローカルで不要になったブランチを削除する
+
+答え
+
+```
+% git branch -D feature/create-components
+```
+
+実行結果  
+※ 表示される内容が多少異なることがございます。
+
+```
+Deleted branch feature/create-components (was 3da2e43).
+```
+
+### step. 13
+
+答え
+
+```
+% git pull origin develop
+```
+
+実行結果  
+※ 表示される内容が多少異なることがございます。
+
+```
+From github.com:ys-nkjm/ys-git-version-alpha
+ * branch            develop    -> FETCH_HEAD
+Updating cd2a982..1b7609c
+Fast-forward
+ src/App.tsx                        | 163 ++++-------------------------------------------------------------------
+ src/components/InputForm/index.tsx |  76 +++++++++++++++++++++++++++++++++
+ src/components/List/index.tsx      | 115 ++++++++++++++++++++++++++++++++++++++++++++++++++
+ 3 files changed, 199 insertions(+), 155 deletions(-)
+ create mode 100644 src/components/InputForm/index.tsx
+ create mode 100644 src/components/List/index.tsx
+```
 
 ## practice
 

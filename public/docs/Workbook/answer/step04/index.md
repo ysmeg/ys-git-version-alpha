@@ -42,7 +42,7 @@ Deleted branch feature/create-todo-app (was c4e0027).
 実行結果
 
 ```
-From github.com:ys-nkjm/ys-git-training-fizz-buzz
+From github.com:ys-nkjm/ys-git-version-alpha
  - [deleted]         (none)     -> origin/feature/create-todo-app
 ```
 
@@ -62,7 +62,7 @@ remote: Enumerating objects: 1, done.
 remote: Counting objects: 100% (1/1), done.
 remote: Total 1 (delta 0), reused 0 (delta 0), pack-reused 0
 Unpacking objects: 100% (1/1), 919 bytes | 459.00 KiB/s, done.
-From github.com:ys-nkjm/ys-git-training-fizz-buzz
+From github.com:ys-nkjm/ys-git-version-alpha
  * branch            develop    -> FETCH_HEAD
    ba628e2..cd2a982  develop    -> origin/develop
 Updating ba628e2..cd2a982

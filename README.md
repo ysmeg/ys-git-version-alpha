@@ -1,4 +1,4 @@
-# ys-git-training-fizz-buzz
+# ys-git-version-alpha
 
 Gitの使い方の練習のために作成したリポジトリになります。(※ α版)  
 こちらのリポジトリは、forkさえすれば壊しても問題ありません。  
