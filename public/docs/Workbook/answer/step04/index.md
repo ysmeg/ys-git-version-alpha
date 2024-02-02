@@ -1,120 +1,104 @@
-# ローカルリポジトリにあるブランチの最新化
+## 最新の変更を取り込む
 
 各Stepごとに答えを記載します。
 
-## ローカルにある`develop`ブランチを、リモートリポジトリにあるdevelopと同様に最新化してください。
+### step. 01
 
-まず現在どのブランチをチェックアウトしているか確認します。
-
-```
-% git branch
-```
+答え
 
 ```
-  develop
-  feature/add-list-item
-* feature/check-type
-  main
+% git checkout develop
 ```
 
-developブランチをチェックアウトしましょう。
-
-
-
-<br>
-
-### git pullのみ
-
-以下のコマンドでdevelopブランチをリモートと同じ状態にできます。
+実行結果
 
 ```
-% git pull origin develop
-```
-<!-- TODO: 実行結果を記載する -->
-
-#### おまけ
-
-mainブランチやdevelopブランチなど、共通のブランチに対して
-
-```
-% git pull
+Switched to branch 'develop'
+Your branch is up to date with 'origin/develop'.
 ```
 
-だけでも最新の状態にする方法があります。  
-詳しくは[upstream](./upstream.md)をご確認ください。
+### step. 02
 
-<br>
+答え
 
-### git fetchを使う
+```
+% git branch -D feature/create-todo-app
+```
 
-まずローカルリポジトリとリモートリポジトリをの履歴を同期します。
+実行結果
+
+```
+Deleted branch feature/create-todo-app (was c4e0027).
+```
+
+### step. 03
+
+答え
 
 ```
 % git fetch --prune
 ```
-<!-- TODO: 実行結果を記載する -->
 
-リモートのdevelopブランチをローカルのdevelopブランチにマージします。
-
-```
-% git merge origin develop
-```
-<!-- TODO: 実行結果を記載する -->
-
-<br>
-
-## マージして不要となった`feature/check-type`ブランチをローカルリポジトリから削除してください。
-
-以下のコマンドを実行して削除してください。
+実行結果
 
 ```
-% git branch -D feature/check-type
+From github.com:ys-nkjm/ys-git-version-alpha
+ - [deleted]         (none)     -> origin/feature/create-todo-app
 ```
 
-以下のような文章が返ってきます。
+### step. 04
+
+答え
 
 ```
-Deleted branch feature/check-type (was [commitID]).
+% git pull origin develop
 ```
-<br>
 
-## `feature/add-list-item`ブランチにローカルの`developブランチ`を取り込んでください。
-
-2パターンがあります。どちらが絶対良いということはありません。  
-現場の進め方に合わせて選択してください。  
-
-以下のコマンドを実行する前に、ブランチを切り替えましょう。
+実行結果  
+※ 表示される内容が多少異なることがございます。
 
 ```
-% git checkout feature/add-list-item
+remote: Enumerating objects: 1, done.
+remote: Counting objects: 100% (1/1), done.
+remote: Total 1 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (1/1), 919 bytes | 459.00 KiB/s, done.
+From github.com:ys-nkjm/ys-git-version-alpha
+ * branch            develop    -> FETCH_HEAD
+   ba628e2..cd2a982  develop    -> origin/develop
+Updating ba628e2..cd2a982
+Fast-forward
+ src/App.tsx | 177 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++---
+ 1 file changed, 173 insertions(+), 4 deletions(-)
 ```
-<br>
 
-### mergeする方法
+### step. 05
 
-以下のコマンドを実行することで、developの内容を取り込むことができます。
+答え
 
 ```
-% git merge develop
+% git checkout feature/create-components
 ```
-<!-- TODO: 実行結果を記載する -->
-<br>
 
-### rebaseする方法
+実行結果
 
-以下のコマンドを実行することで、developの内容を取り込むことができます。
+```
+Switched to branch 'feature/create-components'
+```
+
+### step. 06
+
+答え
 
 ```
 % git rebase develop
 ```
 
-以下のような文章が返ってきたらOKです
+実行結果
 
 ```
-Successfully rebased and updated refs/heads/develop
+Successfully rebased and updated refs/heads/feature/create-components.
 ```
-<br>
 
 ## practice
 
-[step04の練習問題](../../practice/step04/index.md) へ戻る
+[練習問題](/public/docs/Workbook/practice/step04/index.md) へ戻る

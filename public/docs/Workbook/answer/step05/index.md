@@ -1,140 +1,271 @@
-# 復習 - 修正からdevelopにマージまで行う
+## step04 までの復習
 
 以下、解答になります。
 
-## `feature/add-list-item` ブランチをチェックアウトしているか確認してください。
+### step. 01
 
-現在チェックアウトしているブランチの確認は以下のコマンドです。
+#### ブランチ確認
+
+答え
 
 ```
 % git branch
 ```
 
-以下のように返ってくればOKです。
-
-<!-- TODO -->
-```
-入力結果を記載する
-```
-
-<br>
-
-## 他のブランチをチェックアウトしている場合、`feature/add-list-item` ブランチをチェックアウトをしてください。
-
-ブランチを切り替えるには、以下のコマンドです。
+実行結果
 
 ```
-% git checkout feature/add-list-item
+  develop
+* feature/create-components
+  main
 ```
 
-ブランチを確認した時に、以下のように返ってくればOKです。
+#### ブランチの切り替え
 
-<!-- TODO -->
+※ feature/create-components をチェックアウトができていれば、ここはスキップしてください。
+
+答え
+
 ```
-入力結果を記載する
+% git checkout feature/create-components
 ```
 
-<br>
+実行結果
 
-## 変更したファイルの `状態` をターミナルで確認してください。
+```
+Switched to branch 'feature/create-components'
+```
 
-変更ファイルの状態を確認するには以下のコマンドです。
+### step. 02
+
+問題内容の通りにファイルを更新してください。
+
+### step. 03
+
+答え
 
 ```
 % git status
 ```
 
-以下のように返ってくればOKです。
+実行結果  
+※ 表示される内容が多少異なることがございます。
 
-<!-- TODO -->
 ```
-入力結果を記載する
+On branch feature/create-components
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   src/App.tsx
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        src/components/InputForm/
+        src/components/List/
+
+no changes added to commit (use "git add" and/or "git commit -a")
 ```
 
-<br>
+### step. 04
 
-## 変更ファイル全てを `ステージングエリア` に追加してください。
-
-変更ファイルをステージングエリアに追加するには以下のコマンドです。
+答え
 
 ```
 % git add .
 ```
 
-以下のように返ってくればOKです。
+実行結果は特に表示されません。
 
-<!-- TODO -->
-```
-入力結果を記載する
-```
+### step. 05
 
-<br>
-
-## ステージングエリアに追加したファイルを `コミット` してください。コミットメッセージは「FizzBuzzの結果をブラウザに描画する」としてください。
-
-コミットするときは以下のコマンドです。
+答え
 
 ```
-% git commit -m "FizzBuzzの結果をブラウザに描画する"
+% git status
 ```
 
-以下のように返ってくればOKです。
-
-<!-- TODO -->
-```
-入力結果を記載する
-```
-
-<br>
-
-## コミットした内容をリモートに `プッシュ` してください。
-
-リモートにプッシュする場合は以下のコマンドです。
+実行結果
 
 ```
-% git push origin feature/add-list-item
+On branch feature/create-components
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   src/App.tsx
+        new file:   src/components/InputForm/index.tsx
+        new file:   src/components/List/index.tsx
 ```
 
-または
+### step. 06
+
+答え
 
 ```
+% git commit -m "ここに任意のコミットメッセージを入力します"
+```
+
+実行結果  
+※ 表示される内容が多少異なることがございます。
+
+```
+[feature/create-components <コミットIDが表示されます>] <入力されたコミットメッセージが表示されます>
+ 3 files changed, 199 insertions(+), 155 deletions(-)
+ create mode 100644 src/components/InputForm/index.tsx
+ create mode 100644 src/components/List/index.tsx
+```
+
+### step. 07
+
+答え
+
+```
+% git status
+```
+
+実行結果
+
+```
+On branch feature/create-components
+nothing to commit, working tree clean
+```
+
+### step. 08
+
+答え
+
+```
+% git push origin feature/create-components
+
+or
+
 % git push origin HEAD
 ```
 
-<br>
+実行結果  
+※ 表示される内容が多少異なることがございます。
 
-## マージ先をdevelopブランチにして、`PRを作成` してください。  
+```
+Enumerating objects: 13, done.
+Counting objects: 100% (13/13), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (7/7), done.
+Writing objects: 100% (9/9), 2.74 KiB | 2.74 MiB/s, done.
+Total 9 (delta 2), reused 2 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+remote: This repository moved. Please use the new location:
+remote:   git@github.com:ys-nkjm/ys-git-version-alpha.git
+remote: 
+remote: Create a pull request for 'feature/create-components' on GitHub by visiting:
+remote:      https://github.com/ys-nkjm/ys-git-version-alpha/pull/new/feature/create-components
+remote: 
+To github.com:ys-nkjm/ys-git-version-alpha.git
+ * [new branch]      feature/create-components -> feature/create-components
+```
 
-[step03のマージ先を `develop` に変更、プルリクエスト作成完了まで行いましょう。](../step03/index.md#マージ先を-develop-に変更プルリクエスト作成完了まで行いましょう) をご確認ください。
+### step. 09
+#### マージ先を develop ブランチにしてください。
 
-<br>
+画像の赤枠のボタンをクリックして、develop ブランチを指定してください。
 
-## developブランチに `マージ` してください。
+![ブランチ変更](/public/images/workbook/step05/answer/image-01.png)
 
-[step03のGithubの操作で マージ してください。](../step03/index.md#githubの操作で-マージ-してください) をご確認ください。
+#### Open 状態でプルリクエストを作成してください。
 
-<br>
+画像赤枠の ▼ ボタンをクリックして、Create pull request をクリックしてください。
 
-## ローカルのdevelopブランチを `最新化` してください。
+![Open で作成](/public/images/workbook/step05/answer/image-02.png)
 
-developブランチを最新化するには、まずdevelopブランチをチェックアウトしてください。
+### step. 10
+プルリクエストをマージするには、画像赤枠の Merge pull request ボタンをクリックしてください。
+
+![Merge pull request](/public/images/workbook/step05/answer/image-03.png)
+
+次に Confirm merge ボタンをクリックしてください。
+
+![Confirm merge](/public/images/workbook/step05/answer/image-04.png)
+
+### step. 11
+
+マージ後、不要ブランチを削除するには、Delete branch ボタンをクリックしてください。
+
+![Delete branch](/public/images/workbook/step05/answer/image-05.png)
+
+### step. 12
+
+#### develop ブランチに切り替えてください。
+
+答え
 
 ```
 % git checkout develop
 ```
 
-次にリモートとローカルでの履歴を合わせてください。
+実行結果
+
+```
+Switched to branch 'develop'
+Your branch is up to date with 'origin/develop'.
+```
+
+#### ローカルリポジトリの履歴を最新にする
+
+答え
 
 ```
 % git fetch --prune
 ```
 
-最後にdevelopブランチを最新化します。
+実行結果  
+※ 表示される内容が多少異なることがございます。
+
+```
+From github.com:ys-nkjm/ys-git-version-alpha
+ - [deleted]         (none)     -> origin/feature/create-components
+remote: Enumerating objects: 1, done.
+remote: Counting objects: 100% (1/1), done.
+remote: Total 1 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (1/1), 952 bytes | 476.00 KiB/s, done.
+   cd2a982..1b7609c  develop    -> origin/develop
+```
+
+#### ローカルで不要になったブランチを削除する
+
+答え
+
+```
+% git branch -D feature/create-components
+```
+
+実行結果  
+※ 表示される内容が多少異なることがございます。
+
+```
+Deleted branch feature/create-components (was 3da2e43).
+```
+
+### step. 13
+
+答え
 
 ```
 % git pull origin develop
 ```
 
+実行結果  
+※ 表示される内容が多少異なることがございます。
+
+```
+From github.com:ys-nkjm/ys-git-version-alpha
+ * branch            develop    -> FETCH_HEAD
+Updating cd2a982..1b7609c
+Fast-forward
+ src/App.tsx                        | 163 ++++-------------------------------------------------------------------
+ src/components/InputForm/index.tsx |  76 +++++++++++++++++++++++++++++++++
+ src/components/List/index.tsx      | 115 ++++++++++++++++++++++++++++++++++++++++++++++++++
+ 3 files changed, 199 insertions(+), 155 deletions(-)
+ create mode 100644 src/components/InputForm/index.tsx
+ create mode 100644 src/components/List/index.tsx
+```
+
 ## practice
 
-[step05の練習問題](../../practice/step05/index.md) へ戻る
+[練習問題](/public/docs/Workbook/practice/step05/index.md) へ戻る

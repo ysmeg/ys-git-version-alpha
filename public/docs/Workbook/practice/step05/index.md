@@ -32,18 +32,23 @@ Todoアプリを更新します。
 リモートリポジトリにプッシュしてください。
 
 ### step. 09
-1. Open 状態でプルリクエストを作成してください。
-2. 対象リポジトリを自身のリポジトリにしてください。
-3. マージ先を develop ブランチにしてください。
+1. マージ先を develop ブランチにしてください。
+2. Open 状態でプルリクエストを作成してください。
+
+#### Fork したリポジトリは、プルリクエストを作成する際に、リポジトリも選択します。
+自身のリポジトリを選択してください。  
+万が一間違えても、問題はありません。落ち着いてやり直してみましょう。
+
+![リポジトリを変更](/public/images/workbook/step03/practice/image-01.png)
 
 ### step. 10
-Githubの画面で、develop ブランチにマージしてください。
+Github の画面で、develop ブランチにマージしてください。
 
 ### step. 11
 マージされた作業ブランチは不要なため、削除してください。
 
 ### step. 12
-マージして不要となった feature/create-components ブランチを削除してください。
+ローカルでマージして不要となった feature/create-components ブランチを削除してください。
 
 ### step. 13
 develop ブランチを最新の状態にしてください。
@@ -51,16 +56,17 @@ develop ブランチを最新の状態にしてください。
 
 ## Previous Practice
 
-← [最新の変更を取り込む](../step04/index.md)
+← [最新の変更を取り込む](/public/docs/Workbook/practice/step04/index.md)
 
 ## Next Practice
 
-<!-- TODO: 作成したらURLを追加する -->
-[次へ]() →
+[コンフリクトの解消](/public/docs/Workbook/practice/step06/) →
 
 ## answer
 
-答えについては、各stepの答えを確認してください。
+答えは[こちら](/public/docs/Workbook/answer/step05/index.md)を確認してください。
+
+各 step の内容の繰り返しでもあります。以下は各 step の答えになります。
 1. [ブランチ作成・ブランチ切り替え](/public/docs/Workbook/answer/step01/index.md)
 2. [コミット・プッシュ](/public/docs/Workbook/answer/step02/index.md)
 3. [Github でプルリクエストの作成・マージ](/public/docs/Workbook/answer/step03/index.md)

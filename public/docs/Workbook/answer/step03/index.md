@@ -1,77 +1,63 @@
-# プルリクエスト作成からマージ
+## Github でプルリクエストの作成・マージ
 
 各Stepごとに答えを記載します。
 
-## Githubで `new pull request` を作成してください。
+### step. 01
+pushした後すぐにプルリクエストを作る時は、画像赤枠のボタンをクリックしてください。
 
-pushした後リポジトリのページにアクセスすると、以下の画像のように表示されていると思います。
+![プルリクエスト作成画面](/public/images/workbook/step03/answer/image-01.png)
 
-![リポジトリ画面](/public/images/training/step03/image-01.png)
+### step. 02
+#### マージ先を develop に変更、プルリクエスト作成完了まで行ってください。
 
-`new pull request` をクリックすると、プルリクエストを作成する画面が表示されます。
+画像の赤枠のボタンをクリックして、develop ブランチを指定してください。
 
-<br>
+![ブランチ変更](/public/images/workbook/step03/answer/image-02.png)
 
-## マージ先を `develop` に変更、プルリクエスト作成完了まで行いましょう。
+#### Github で新規プルリクエストを Draft 状態で作成してください。
 
-以下の画像のように、マージ先のブランチを `develop` に変更してください。
+画像赤枠の ▼ ボタンをクリックして、Create draft pull request をクリックしてください。
 
-![ブランチ変更](/public/images/training/step03/image-03.png)
+![Draft で作成](/public/images/workbook/step03/answer/image-03.png)
 
-<br>
+Draftで作成されていることは、画像赤枠の表示から判断できます。
 
-タイトルと説明欄を埋めて `create pull request` ボタンをクリックして、プルリクエストを作成します。
+![Draft 状態を確認](/public/images/workbook/step03/answer/image-04.png)
 
-![プルリクエストを作成](/public/images/training/step03/image-04.png)
+### step. 03
+Draft から Open に切り替えるには画像赤枠の、Ready for review ボタンをクリックしてください。
 
-<br>
+![Draft から Open に変更](/public/images/workbook/step03/answer/image-05.png)
 
-### おまけ - DraftのPRを作成する
+プルリクエスト画面の Draft が Open に変わっていると思います。
 
-実装は完了していないが、相談したい・意見を欲しいという時は `create pull request` 横の「▼」をクリックしてください。  
-`create draft pull request` を選択して、 `draft pull request` をクリックしてください。
+![Draft から Open に変更](/public/images/workbook/step03/answer/image-06.png)
 
-![DraftPRを作成](/public/images/training/step03/image-05.png)
 
-これでレビューはできるが、マージはできないプルリクエストを作成できます。
+### step. 04
 
-<br>
+プルリクエストをマージするには、画像赤枠の Merge pull request ボタンをクリックしてください。
 
-## Githubの操作で `マージ` してください。
+![Merge pull request](/public/images/workbook/step03/answer/image-07.png)
 
-プルリクエストの作成が完了したら `merge pull request` をクリックしてください。
+次に Confirm merge ボタンをクリックしてください。
 
-![Merge pull request](/public/images/training/step03/image-06.png)
+![Confirm merge](/public/images/workbook/step03/answer/image-08.png)
 
-<br>
+マージが完了後、画面に Merge を表す表現が出ているか確認してください。
 
-マージするタイトルやマージ先に問題がないことを確認できたら `confirm merge` をクリックしてください。
+![正常に Merge されている](/public/images/workbook/step03/answer/image-09.png)
 
-![Confirm merge](/public/images/training/step03/image-07.png)
+###  step. 05
 
-<br>
+マージ後、不要ブランチを削除するには、Delete branch ボタンをクリックしてください。
 
-以下の画像のように `Merge` となっていれば、成功です。
+![Delete branch](/public/images/workbook/step03/answer/image-10.png)
 
-![merge pull request](/public/images/training/step03/image-08.png)
+画像赤枠のような表現が出ているか確認してください。
 
-<br>
-
-## リモートにある作業ブランチを削除しましょう
-
-マージしたブランチは残さず、削除していきましょう。  
-`Delete Branch` ボタンをクリックしてください。
-
-![ブランチ削除-01](/public/images/training/step03/image-09.png)
-
-<br>
-
-以下の画像のような表示になっていれば、ブランチの削除は完了です
-
-![ブランチ削除-02](/public/images/training/step03/image-10.png)
-
-<br>
+![ブランチを消したことのメッセージ](/public/images/workbook/step03/answer/image-11.png)
 
 ## practice
 
-[step03の練習問題](../../practice/step03/index.md) へ戻る
+[練習問題](/public/docs/Workbook/practice/step03/index.md) へ戻る

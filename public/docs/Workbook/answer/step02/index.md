@@ -1,143 +1,166 @@
-# リモートリポジトリにプッシュ
+## コミット・プッシュ
 
 各Stepごとに答えを記載します。
 
-## `feature/check-type`をチェックアウトしているか確認しましょう。
+### step. 01
 
-どのブランチをチェックアウトしているかは、以下のコマンドを実行します。
+答え
 
 ```
 % git branch
 ```
 
-`feature/check-type` をチェックアウトしていれば、以下の内容が表示されているはずです。
+実行結果
 
 ```
   develop
-  feature/add-list-item
-* feature/check-type
+  feature/create-components
+* feature/create-todo-app
   main
 ```
 
-もし上記結果と違う場合は、以下のコマンドを実行して、ブランチを切り替えます。  
-(ここでは developブランチ から切り替えることを想定します。)
+feature/create-todo-app をチェックアウトしていない場合は以下のコマンドを実行してください。
 
 ```
-% git checkout feature/check-type
+% git checkout feature/create-todo-app
 ```
 
-以下のように表示されていれば成功です。
+実行結果
 
 ```
-Switched to branch 'feature/check-type'
+Switched to branch 'feature/create-todo-app'
 ```
 
-心配な人は `git branch` コマンドで確認してみてください。
+### step. 02
 
-<br>
+問題内容の通りにファイルを更新してください。
 
-## 変更したファイルの`状態`を確認しましょう。
+### step. 03
 
-変更したファイルの状態を確認するには以下のコマンドを実行してください。
+答え
 
 ```
 % git status
 ```
 
-以下のように表示されていれば、無事ファイルの変更をgitが検知しています。
+実行結果
 
 ```
-On branch feature/check-type
+On branch feature/create-todo-app
 Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
   (use "git restore <file>..." to discard changes in working directory)
-        modified:   index.js
+        modified:   src/App.tsx
 
 no changes added to commit (use "git add" and/or "git commit -a")
 ```
-<br>
 
-## 変更したファイルを`ステージングエリア`に追加しましょう。
+### step. 04
 
-以下のコマンドで変更したファイルをステージングエリアに追加することができます。  
+#### パターン01
 
-1. 下記は特定のファイルのみをステージングエリアに追加します。
+答え
 
 ```
-% git add [directory/**/file]
+% git add src/App.tsx
 ```
 
-2. 下記は変更したファイル全てをステージングエリアに追加します。
+実行結果は特に表示されません。
+
+#### パターン02
+
+答え
 
 ```
 % git add .
 ```
 
-`git add` コマンドを実行しただけでは、特にログは表示されません。  
-再度 `git status` で状態を確認してみましょう。  
-以下のように表示されれば、変更したファイルがステージングエリアに追加されています。  
+実行結果は特に表示されません。
+
+### step. 05
+
+答え
 
 ```
-On branch feature/check-type
+% git status
+```
+
+実行結果
+
+```
+On branch feature/create-todo-app
 Changes to be committed:
   (use "git restore --staged <file>..." to unstage)
-        modified:   index.js
-```
-<br>
-
-## ステージングエリアにある変更ファイルをローカルリポジトリに`コミット`しましょう。
-
-以下のコマンドでステージングエリアからローカルリポジトリにコミットすることができます。  
-今回の条件として、 **コミットする際、「型をチェックする」という`コメント`を追加してください。** とあります。以下のように記載することで、コミットにコメントをつけることが可能です。
-
-```
-% git commit -m "型をチェックする"
+        modified:   src/App.tsx
 ```
 
-以下の内容が表示されていれば、成功です。  
-※ 「280346c」の部分はコミットIDです。そのため人によって内容が変わります。
+### step. 06
+
+答え
 
 ```
-[feature/check-type 280346c] 型をチェックする
- 1 file changed, 9 insertions(+), 4 deletions(-)
-```
-<br>
-
-## ローカルリポジトリにコミットした内容をリモートリポジトリに`プッシュ`しましょう。
-
-ローカルリポジトリからリモートリポジトリにプッシュする場合は、以下のコマンドを実行します。
-
-```
-% git push origin feature/check-type
+% git commit -m "ここに任意のコミットメッセージを入力します"
 ```
 
-または以下でも問題ありません。  
-HEADは今作業しているブランチを表しています。
+実行結果  
+※ 表示される内容が多少異なることがございます。
 
 ```
-% git push origin HEAD
+[feature/create-todo-app <コミットIDが表示されます>] <入力されたコミットメッセージが表示されます>
+ 1 file changed, 173 insertions(+), 4 deletions(-)
 ```
 
-以下のような内容が表示されていれば、成功です。
+### step. 07
+
+答え
 
 ```
-Enumerating objects: 5, done.
-Counting objects: 100% (5/5), done.
-Delta compression using up to 4 threads
-Compressing objects: 100% (3/3), done.
-Writing objects: 100% (3/3), 455 bytes | 455.00 KiB/s, done.
-Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+% git status
+```
+
+実行結果
+
+```
+On branch feature/create-todo-app
+nothing to commit, working tree clean
+```
+
+### step. 08
+
+答え
+
+```
+git push origin feature/create-todo-app
+```
+
+または
+
+```
+git push origin HEAD
+```
+
+実行結果  
+※ 表示される内容が多少異なることがございます。
+
+```
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 1.62 KiB | 1.62 MiB/s, done.
+Total 4 (delta 2), reused 0 (delta 0), pack-reused 0
 remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+remote: This repository moved. Please use the new location:
+remote:   git@github.com:ys-nkjm/ys-git-version-alpha.git
 remote: 
-remote: Create a pull request for 'feature/check-type' on GitHub by visiting:
-remote:      https://github.com/(user-name)/(repository-name)/pull/new/feature/check-type
+remote: Create a pull request for 'feature/create-todo-app' on GitHub by visiting:
+remote:      https://github.com/ys-nkjm/ys-git-version-alpha/pull/new/feature/create-todo-app
 remote: 
-To github.com:(user-name)/(repository-name).git
- * [new branch]      HEAD -> feature/check-type
+To github.com:ys-nkjm/ys-git-version-alpha
+ * [new branch]      HEAD -> feature/create-todo-app
 ```
 
-<br>
 
 ## practice
 
-[step02の練習問題](../../practice/step02/index.md) へ戻る
+[練習問題](/public/docs/Workbook/practice/step02/index.md) へ戻る
