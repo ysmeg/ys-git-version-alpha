@@ -15,5 +15,5 @@ Git の使い方の練習のために作成したリポジトリになります�
 以下の順番で環境構築をしてください。
 
 1. [リポジトリを自身の Github に Fork をする](/public/docs/HowToFork.md)
-2. [Fork したリポジトリをローカル環境に Clone する](/public/docs/HowToClone.md)
+2. [## 環境構築](/public/docs/HowToEnvBuild.md)
 3. [Git のトレーニングを始める](/public/docs/Workbook/README.md)
