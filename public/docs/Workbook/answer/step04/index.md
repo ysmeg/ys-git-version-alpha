@@ -81,7 +81,6 @@ From github.com:toku-chan/ys-git-version-alpha
 ```
 
 #### 実行結果
-<!-- TODO: 実行結果が怪しい -->
 
 表示される内容は異なります。  
 以下に似た実行結果が返ってきていれば、問題ありません。
