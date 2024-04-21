@@ -1,10 +1,6 @@
 import React from "react";
 import styled from "@emotion/styled";
-import {
-  Button,
-  Divider,
-  Typography
-} from "@mui/material";
+import { Button, Divider, Typography } from "@mui/material";
 
 import type { TodoList } from "~/sample/TodoApp-02/App";
 
@@ -29,58 +25,56 @@ const StyledButtonWrapper = styled.div`
 `;
 
 type Props = {
-  getData: () => Promise<void>
-  todoList: TodoList[]
-}
+  getData: () => Promise<void>;
+  todoList: TodoList[];
+};
 
-export const List: React.FC<Props> = ({
-  getData,
-  todoList
-}) => {
-  const completedTodoItem = async(item: TodoList) => {
+export const List: React.FC<Props> = ({ getData, todoList }) => {
+  const completedTodoItem = async (item: TodoList) => {
     const res = await fetch(`http://localhost:3000/tasks/${item.id}`, {
       method: "PUT",
       mode: "cors",
       headers: {
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({
         ...item,
-        isCompleted: !item.isCompleted
-      })
-    })
+        isCompleted: !item.isCompleted,
+      }),
+    });
 
-    if(!res.ok) {
+    if (!res.ok) {
       throw new Error();
     }
 
     await getData();
-  }
+  };
 
-  const deleteTodoItem = async(id: string) => {
+  const deleteTodoItem = async (id: string) => {
     const res = await fetch(`http://localhost:3000/tasks/${id}`, {
       method: "DELETE",
       mode: "cors",
       headers: {
-        "Content-Type": "application/json"
-      }
-    })
+        "Content-Type": "application/json",
+      },
+    });
 
-    if(!res.ok) {
+    if (!res.ok) {
       throw new Error();
     }
 
     await getData();
-  }
+  };
 
   return (
     <StyledList>
-      {todoList.map(item => (
+      {todoList.map((item) => (
         <>
           <StyledListItem key={item.id}>
             <Typography
               sx={{
-                textDecoration: () => item.isCompleted ? "line-through" : "none",
+                textDecoration: () =>
+                  item.isCompleted ? "line-through" : "none",
               }}
             >
               {item.content}
@@ -98,7 +92,7 @@ export const List: React.FC<Props> = ({
                   boxShadow: "none",
                   "&:hover": {
                     backgroundColor: "#FF3700",
-                    boxShadow: "none"
+                    boxShadow: "none",
                   },
                 }}
               >
@@ -112,11 +106,15 @@ export const List: React.FC<Props> = ({
                 sx={{
                   minWidth: "57px",
                   height: "32px",
-                  backgroundColor: `${item.isCompleted ? "#C1C1C1" : "#008CFF"}`,
+                  backgroundColor: `${
+                    item.isCompleted ? "#C1C1C1" : "#008CFF"
+                  }`,
                   boxShadow: "none",
                   "&:hover": {
-                    backgroundColor: `${item.isCompleted ? "#C1C1C1" : "#008CFF"}`,
-                    boxShadow: "none"
+                    backgroundColor: `${
+                      item.isCompleted ? "#C1C1C1" : "#008CFF"
+                    }`,
+                    boxShadow: "none",
                   },
                 }}
               >
@@ -128,5 +126,5 @@ export const List: React.FC<Props> = ({
         </>
       ))}
     </StyledList>
-  )
-}
+  );
+};

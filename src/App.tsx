@@ -14,7 +14,7 @@ export type TodoList = {
   id: string;
   content: string;
   isCompleted: boolean;
-}
+};
 
 function App() {
   const [todoList, setTodoList] = React.useState<TodoList[]>([]);
@@ -25,20 +25,20 @@ function App() {
         method: "GET",
         mode: "cors",
         headers: {
-          "Content-Type": "application/json"
-        }
-      })
+          "Content-Type": "application/json",
+        },
+      });
 
-      if(!res.ok) {
+      if (!res.ok) {
         throw new Error();
       }
 
       const data = await res.json();
       setTodoList(data);
     } catch (error) {
-      alert('「npm run json-server」でjson-serverを起動してください。')
+      alert("「npm run json-server」でjson-serverを起動してください。");
     }
-  }
+  };
 
   React.useEffect(() => {
     getTodoList();
@@ -46,11 +46,13 @@ function App() {
 
   return (
     <StyledContainer>
-      <Typography variant="h1" sx={{fontSize: "32px"}}>今日やること</Typography>
+      <Typography variant="h1" sx={{ fontSize: "32px" }}>
+        今日やること
+      </Typography>
       <InputForm getData={getTodoList} />
       <List getData={getTodoList} todoList={todoList} />
     </StyledContainer>
-  )
+  );
 }
 
 export default App;

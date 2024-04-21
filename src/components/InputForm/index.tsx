@@ -12,12 +12,10 @@ const StyledForm = styled.form`
 `;
 
 type Props = {
-  getData: () => Promise<void>
+  getData: () => Promise<void>;
 };
 
-export const InputForm: React.FC<Props> = ({
-  getData
-}) => {
+export const InputForm: React.FC<Props> = ({ getData }) => {
   const [content, setContent] = React.useState("");
 
   const addTodoItem = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -29,23 +27,23 @@ export const InputForm: React.FC<Props> = ({
       method: "POST",
       mode: "cors",
       headers: {
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({
         id: randomId,
         content,
-        isCompleted: false
-      })
+        isCompleted: false,
+      }),
     });
 
-    setContent('');
+    setContent("");
 
-    if(!res.ok) {
+    if (!res.ok) {
       throw new Error();
     }
 
     await getData();
-  }
+  };
 
   return (
     <StyledForm onSubmit={(e) => addTodoItem(e)}>
@@ -73,12 +71,12 @@ export const InputForm: React.FC<Props> = ({
           boxShadow: "none",
           "&:hover": {
             backgroundColor: `${!content ? "#C1C1C1" : "#008CFF"}`,
-            boxShadow: "none"
+            boxShadow: "none",
           },
         }}
       >
         追加
       </Button>
     </StyledForm>
-  )
-}
+  );
+};
